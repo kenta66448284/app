@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.title{
+  width: 80%;
+  margin: 20px auto;
+}
+#root{
+  width: 80%;
+  margin: 0 auto;
+}
+.fc-button-group{
+  width: 30%;
+}
+.container__form{
+  margin-top: 50px;
+border: 1px solid #000;
+}
+
