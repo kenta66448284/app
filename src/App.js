@@ -28,6 +28,7 @@ class App extends Component {
       inputTitle: "",
       inputMemo: "",
       inputMoney:"",
+      inputsstart:"",
       isInputTitle: false,
       isChange: false,
     };
@@ -105,6 +106,7 @@ class App extends Component {
     this.setState({ inputTitle: "" });
     this.setState({ inputMemo: "" });
     this.setState({ inputMoney: "" });
+    this.setState({ inputsstart:""});
     this.setState({ isInputTitle: false });
     this.setState({ inputStart: start });
     this.setState({ inputEnd: end });
@@ -120,14 +122,16 @@ class App extends Component {
     const title = selEvent.title;
     const memo = selEvent.memo;
     const money = selEvent.money;
+    const shostart = selEvent.shostart;
     const start = new Date(selEvent.start);
     const end = new Date(selEvent.end);
-    const sstart = new Date(selEvent.start);
+    const sstart = new Date(selEvent.sstart);
   
 
     this.setState({ inputTitle: title });
     this.setState({ inputMemo: memo });
     this.setState({ inputMoney: money });
+    this.setState({ inputsstart: shostart });
     this.setState({ isInputTitle: true });
     this.setState({ inputStart: start });
     this.setState({ inputEnd: end });
@@ -177,6 +181,7 @@ class App extends Component {
           <div>{this.rendershoppingTime()}</div>
           {/* <div>{this.rendershoppingendTime()}</div> */}
           <div>{this.renderMoney()}</div>
+          <div>{this.rendershostart()}</div>
           <div>{this.renderMemo()}</div>
           <div>{this.renderBtn()}</div>
         </form>
@@ -214,6 +219,21 @@ class App extends Component {
           value={this.state.inputMoney}
           onChange={(e) => {
             this.setState({ inputMoney: e.target.value });
+          }}
+        />
+      </React.Fragment>
+    );
+  }
+  rendershostart() {
+    return (
+      <React.Fragment>
+        <p className="container__form__label">必要金額</p>
+        <textarea
+          className="container__form__memo"
+          rows="1"
+          value={this.state.inputsstart}
+          onChange={(e) => {
+            this.setState({ inputsstart: e.target.value });
           }}
         />
       </React.Fragment>
